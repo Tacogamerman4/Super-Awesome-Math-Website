@@ -9,28 +9,9 @@
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
       <style>
-         .redirect-button {
+         .button {
             position: fixed;
             bottom: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: white;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-         }
-
-         .redirect-button:hover {
-            background-color: #0056b3;
-         }
-
-         .black-button {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
             padding: 10px 20px;
             font-size: 16px;
             color: white;
@@ -41,8 +22,16 @@
             text-decoration: none;
          }
 
-         .black-button:hover {
+         .button:hover {
             background-color: #333;
+         }
+
+         .right {
+            right: 20px;
+         }
+
+         .left {
+            left: 20px;
          }
       </style>
    </head>
@@ -60,11 +49,11 @@
          </div>
       </div>
       
-      <!-- Blue Button (Bottom Right) -->
-      <button class="redirect-button" onclick="window.location.href='/games.html'">Go to Games</button>
+      <!-- Black Button (Bottom Right) -->
+      <button class="button right" onclick="window.location.href='/games.html'">Go to Games</button>
       
       <!-- Black Button (Bottom Left) -->
-      <button class="black-button" onclick="blank()">Remove from history</button>
+      <button class="button left" onclick="blank()">Remove from history</button>
 
       <script>
          function blank() {
