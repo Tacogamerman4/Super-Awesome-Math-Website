@@ -10,7 +10,9 @@
       <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
       <style>
          .redirect-button {
-            display: inline-block;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
             padding: 10px 20px;
             font-size: 16px;
             color: white;
@@ -19,7 +21,6 @@
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
-            margin-top: 20px;
          }
 
          .redirect-button:hover {
@@ -40,11 +41,11 @@
             <p id="uv-error"></p>
             <pre id="uv-error-code"></pre>
          </div>
-         
-         <!-- New Button to Redirect to games.html -->
-         <button class="redirect-button" onclick="window.location.href='/games.html'">Go to Games</button>
-
       </div>
+      
+      <!-- Button moved to bottom right -->
+      <button class="redirect-button" onclick="window.location.href='/games.html'">Go to Games</button>
+
       <script src="uv/uv.bundle.js" defer></script>
       <script src="uv/uv.config.js" defer></script>
       <script src="register-sw.js" defer></script>
