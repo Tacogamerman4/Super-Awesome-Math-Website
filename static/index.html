@@ -16,7 +16,7 @@
             padding: 10px 20px;
             font-size: 16px;
             color: white;
-            background-color: #000000;
+            background-color: #007BFF;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -26,11 +26,28 @@
          .redirect-button:hover {
             background-color: #0056b3;
          }
+
+         .black-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+         }
+
+         .black-button:hover {
+            background-color: #333;
+         }
       </style>
    </head>
    <body>
-      <div id="header">
-      </div>
+      <div id="header"></div>
       <div id="content">
          <h1>Super-Awesome-Math-Website</h1>
          <form id="uv-form">
@@ -43,8 +60,31 @@
          </div>
       </div>
       
-      <!-- Button moved to bottom right -->
+      <!-- Blue Button (Bottom Right) -->
       <button class="redirect-button" onclick="window.location.href='/games.html'">Go to Games</button>
+      
+      <!-- Black Button (Bottom Left) -->
+      <button class="black-button" onclick="blank()">Open in Fullscreen</button>
+
+      <script>
+         function blank() {
+            (function () {
+               var url = document.URL;
+               var win = window.open();
+               win.document.body.style.margin = "0";
+               win.document.body.style.height = "100vh";
+               var iframe = win.document.createElement("iframe");
+               iframe.style.border = "none";
+               iframe.style.width = "100%";
+               iframe.style.height = "100%";
+               iframe.style.margin = "0";
+               iframe.referrerpolicy = "no-referrer";
+               iframe.allow = "fullscreen";
+               iframe.src = url.toString();
+               win.document.body.appendChild(iframe);
+            })();
+         }
+      </script>
 
       <script src="uv/uv.bundle.js" defer></script>
       <script src="uv/uv.config.js" defer></script>
